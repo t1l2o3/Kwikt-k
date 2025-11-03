@@ -22,15 +22,16 @@
             border-radius: 8px;
             background-color: #fff;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
+margin: 0;
 
-        .header-box {
-            height: 20px;
-            width: 80px;
-            background-color: #e0e0e0;
-            margin-bottom: 20px;
-            border-radius: 4px;
-        }
+  .header-box {
+    height: 20px;
+    width: 80px;
+    background-color: #e0e0e0;
+    margin: 0 auto 20px; /* top/bottom 0 and 20px, left/right auto */
+    border-radius: 4px;
+}
+
 
         .text-area-box {
             width: calc(100% - 20px);
@@ -67,7 +68,7 @@
             color: white;
             padding: 8px 12px;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 10px;
         }
 
         .voice-module button:hover {
@@ -95,18 +96,27 @@
 
         .action-buttons {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             margin-bottom: 30px;
+flex-direction: column;
         }
+#rejectConfirmRecData {
+display: flex;
+justify-content: space-around;
+flex-direction: row;
+
+}
 
         .action-button-large {
-            width: 120px;
+            width: 180px;
             height: 50px;
             border: 2px solid #ccc;
             border-radius: 8px;
             display: flex;
             justify-content: center;
             align-items: center;
+            
+
             font-size: 24px;
             color: #555;
             cursor: pointer;
@@ -115,15 +125,23 @@
         .action-button-large.check {
             border-color: #28a745; /* Green for check */
             color: #28a745;
+width: 10vw;
+max-width: 80px;
         }
 
         .action-button-large.cross {
             border-color: #dc3545; /* Red for cross */
             color: #dc3545;
+width: 10vw;
+max-width: 80px;
         }
+#recordingButtonHolder {
+width:inherit;
+margin-top: 30px;
+}
 
         .recording-button {
-            width: 180px; /* Wider to accommodate text */
+            width: 60px; /* Wider to accommodate text */
             height: 60px;
             background-color: #007bff; /* Blue for start */
             border: none;
@@ -131,7 +149,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 0 auto;
+            margin: 0 auto 1px;
             font-size: 18px;
             color: white;
             cursor: pointer;
@@ -143,27 +161,37 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header-box"></div> 
         <div class="text-area-box">
-            <p>Data acquisition for training the translator engine</p>
+            <p>This is where the English sentense are displayed to be read by the user.</p>
         </div>
 
         <div class="voice-module">
-            <button id="recordButton">Record</button>
-            <div class="audio-playback" id="audioPlaybackPlaceholder">No recording yet</div>
+
+
             <audio id="audioPlayback" controls></audio>
             <button id="playButton" style="display: none;">Play</button>
         </div>
 
         <div class="action-buttons">
+<div id="rejectConfirmRecData">
             <div class="action-button-large cross">X</div>
             <div class="action-button-large check">✓</div>
-        </div>
+</div>
+   <div class="container" id="recordingButtonHolder">
+    
 
-        <button class="recording-button" id="startStopRecording">Start Recording</button>
-    </div>
+    <button class="recording-button" id="startStopRecording">
+      <!-- SVG mic icon -->
+      <svg class="mic-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"/>
+        <path d="M19 11a1 1 0 0 0-2 0 5 5 0 0 1-10 0 1 1 0 0 0-2 0 7 7 0 0 0 6 6.92V20H9a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2h-2v-2.08A7 7 0 0 0 19 11z"/>
+      </svg>
+    </button>
+  </div>
 
     <script>
         const startStopRecordingButton = document.getElementById('startStopRecording');
@@ -216,7 +244,7 @@
 
                 mediaRecorder.start();
                 isRecording = true;
-                startStopRecordingButton.textContent = 'Stop Recording';
+                //startStopRecordingButton.textContent = 'Stop Recording';
                 startStopRecordingButton.classList.add('recording');
                 recordButton.disabled = true; // Disable individual record button while main recording is active
                 audioPlayback.style.display = 'none'; // Hide playback during new recording
@@ -228,7 +256,7 @@
                 // Stop Recording
                 mediaRecorder.stop();
                 isRecording = false;
-                startStopRecordingButton.textContent = 'Start Recording';
+                //startStopRecordingButton.textContent = 'Start Recording';
                 startStopRecordingButton.classList.remove('recording');
                 recordButton.disabled = false;
                 console.log('Recording stopped.');
