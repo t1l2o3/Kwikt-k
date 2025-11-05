@@ -1,322 +1,176 @@
-<!DOCTYPE html>
+                <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krio to English Translator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
-
-        .container {
-            width: 350px; /* Approximate width based on sketch */
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-margin: 0;
-
-  .header-box {
-    height: 20px;
-    width: 80px;
-    background-color: #e0e0e0;
-    margin: 0 auto 20px; /* top/bottom 0 and 20px, left/right auto */
-    border-radius: 4px;
-}
-
-
-        .text-area-box {
-            width: calc(100% - 20px);
-            height: 100px;
-            border: 1px solid #aaa;
-            padding: 10px;
-            margin-bottom: 20px;
-            border-radius: 4px;
-            overflow-y: auto;
-            background-color: #f9f9f9;
-        }
-
-        .text-area-box p {
-            margin: 0;
-            color: #333;
-            line-height: 1.5;
-        }
-
-        .voice-module {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            padding: 5px;
-            background-color: #f0f0f0;
-        }
-
-        .voice-module button {
-            background-color: #007bff;
-            border: none;
-            border-radius: 4px;
-            color: white;
-            padding: 8px 12px;
-            cursor: pointer;
-            font-size: 10px;
-        }
-
-        .voice-module button:hover {
-            background-color: #0056b3;
-        }
-
-        .audio-playback {
-            flex-grow: 1;
-            /* Placeholder for audio playback */
-            height: 30px;
-            line-height: 30px;
-            text-align: center;
-            color: #555;
-            font-size: 14px;
-            background-color: #e9e9e9;
-            border-radius: 4px;
-        }
-
-        /* Actual audio element styling */
-        .audio-playback audio {
-            width: 100%;
-            height: 30px;
-            display: none; /* Hidden until recording is available */
-        }
-
-        .action-buttons {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 30px;
-flex-direction: column;
-        }
-#rejectConfirmRecData {
-display: flex;
-justify-content: space-around;
-flex-direction: row;
-
-}
-
-        .action-button-large {
-            width: 180px;
-            height: 50px;
-            border: 2px solid #ccc;
-            border-radius: 8px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            
-
-            font-size: 24px;
-            color: #555;
-            cursor: pointer;
-        }
-
-        .action-button-large.check {
-            border-color: #28a745; /* Green for check */
-            color: #28a745;
-width: 10vw;
-max-width: 80px;
-        }
-
-        .action-button-large.cross {
-            border-color: #dc3545; /* Red for cross */
-            color: #dc3545;
-width: 10vw;
-max-width: 80px;
-        }
-#recordingButtonHolder {
-width:inherit;
-margin-top: 30px;
-}
-
-        .recording-button {
-            width: 60px; /* Wider to accommodate text */
-            height: 60px;
-            background-color: #007bff; /* Blue for start */
-            border: none;
-            border-radius: 30px; /* Pill shape */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto 1px;
-            font-size: 18px;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .recording-button.recording {
-            background-color: #dc3545; /* Red when recording */
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kwiɔk Tɔk Translator – Data Collection Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: #f8f9fa;
+      font-family: "Segoe UI", sans-serif;
+    }
+    .form-container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #004085;
+    }
+  </style>
 </head>
-
 <body>
-    <div class="container">
-        <div class="header-box"></div> 
-        <div class="text-area-box">
-            <p>This is where the English sentense are displayed to be read by the user.</p>
+  <div class="container">
+    <div class="form-container">
+      <h2>Kwiɔk Tɔk Translator – Speech Data Entry</h2>
+      <form>
+
+        <!-- Age & Gender -->
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Age Range</label>
+            <select class="form-select" required>
+              <option value="">Select Age Range</option>
+              <option>6–9</option>
+              <option>10–15</option>
+              <option>16–19</option>
+              <option>20–23</option>
+              <option>24–32</option>
+              <option>33–41</option>
+              <option>42–55</option>
+              <option>56–62</option>
+              <option>63–Till Death</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Gender</label>
+            <select class="form-select" required>
+              <option value="">Select Gender</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </div>
         </div>
 
-        <div class="voice-module">
-
-
-            <audio id="audioPlayback" controls></audio>
-            <button id="playButton" style="display: none;">Play</button>
+        <!-- Tribe/Accent & Environment -->
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Tribe / Accent</label>
+            <select class="form-select">
+              <option value="">Select Tribe / Accent</option>
+              <option>Krio</option>
+              <option>Temne</option>
+              <option>Mende</option>
+              <option>Limba</option>
+              <option>Fullah</option>
+              <option>Susu</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Environment</label>
+            <select class="form-select">
+              <option value="">Select Environment</option>
+              <option>Indoor</option>
+              <option>Outdoor</option>
+              <option>Vehicle</option>
+              <option>Market</option>
+              <option>Office</option>
+              <option>Other</option>
+            </select>
+          </div>
         </div>
 
-        <div class="action-buttons">
-<div id="rejectConfirmRecData">
-            <div class="action-button-large cross">X</div>
-            <div class="action-button-large check">✓</div>
-</div>
-   <div class="container" id="recordingButtonHolder">
-    
+        <!-- Device & Emotion -->
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Recording Device</label>
+            <select class="form-select">
+              <option value="">Select Device</option>
+              <option>Phone Mic</option>
+              <option>Lavalier Mic</option>
+              <option>Laptop Mic</option>
+              <option>Studio Mic</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Emotion / Tone</label>
+            <select class="form-select">
+              <option value="">Select Emotion</option>
+              <option>Neutral</option>
+              <option>Happy</option>
+              <option>Sad</option>
+              <option>Serious</option>
+              <option>Joyful</option>
+              <option>Angry</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
 
-    <button class="recording-button" id="startStopRecording">
-      <!-- SVG mic icon -->
-      <svg class="mic-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"/>
-        <path d="M19 11a1 1 0 0 0-2 0 5 5 0 0 1-10 0 1 1 0 0 0-2 0 7 7 0 0 0 6 6.92V20H9a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2h-2v-2.08A7 7 0 0 0 19 11z"/>
-      </svg>
-    </button>
+        <!-- Language Level -->
+        <div class="mb-3">
+          <label class="form-label">Language Level</label>
+          <select class="form-select">
+            <option value="">Select Level</option>
+            <option>Native</option>
+            <option>Fluent</option>
+            <option>Intermediate</option>
+            <option>Beginner</option>
+          </select>
+        </div>
+
+        <!-- Audio Upload -->
+        <div class="mb-3">
+          <label class="form-label">Krio Speech File (WAV/FLAC)</label>
+          <input class="form-control" type="file" accept=".wav,.flac" required>
+        </div>
+
+        <!-- English Translation -->
+        <div class="mb-3">
+          <label class="form-label">English Translation</label>
+          <textarea class="form-control" rows="3" placeholder="Enter the English translation text here..." required></textarea>
+        </div>
+
+        <!-- Numeric Inputs -->
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label class="form-label">Speech Rate (words/sec)</label>
+            <input type="number" step="0.1" class="form-control">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Rhythm</label>
+            <input type="number" step="0.1" class="form-control">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Intensity</label>
+            <input type="number" step="0.01" class="form-control">
+          </div>
+        </div>
+
+        <!-- DateTime -->
+        <div class="mb-3">
+          <label class="form-label">Date & Time</label>
+          <input type="datetime-local" class="form-control" value="">
+        </div>
+
+        <!-- Buttons -->
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary me-2">Submit Record</button>
+          <button type="reset" class="btn btn-secondary">Reset</button>
+        </div>
+
+      </form>
+    </div>
   </div>
-
-    <script>
-        const startStopRecordingButton = document.getElementById('startStopRecording');
-        const recordButton = document.getElementById('recordButton');
-        const playButton = document.getElementById('playButton');
-        const audioPlayback = document.getElementById('audioPlayback');
-        const audioPlaybackPlaceholder = document.getElementById('audioPlaybackPlaceholder');
-
-        let mediaRecorder;
-        let audioChunks = [];
-        let audioBlob;
-        let isRecording = false;
-
-        // Request microphone access
-        async function getMicrophone() {
-            try {
-                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-                return stream;
-            } catch (err) {
-                console.error('Error accessing microphone:', err);
-                alert('Please allow microphone access to use the recording feature.');
-                return null;
-            }
-        }
-
-        // Start/Stop Recording for the bottom button
-        startStopRecordingButton.addEventListener('click', async () => {
-            if (!isRecording) {
-                // Start Recording
-                const stream = await getMicrophone();
-                if (!stream) return;
-
-                mediaRecorder = new MediaRecorder(stream);
-                audioChunks = [];
-
-                mediaRecorder.ondataavailable = event => {
-                    audioChunks.push(event.data);
-                };
-
-                mediaRecorder.onstop = () => {
-                    audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
-                    const audioUrl = URL.createObjectURL(audioBlob);
-                    audioPlayback.src = audioUrl;
-                    audioPlayback.style.display = 'block';
-                    audioPlaybackPlaceholder.style.display = 'none'; // Hide placeholder
-                    playButton.style.display = 'none'; // Play button is now integrated into audio controls
-                    console.log('Recording finished:', audioUrl);
-                    // At this point, you'd typically send audioBlob to a server for processing
-                };
-
-                mediaRecorder.start();
-                isRecording = true;
-                //startStopRecordingButton.textContent = 'Stop Recording';
-                startStopRecordingButton.classList.add('recording');
-                recordButton.disabled = true; // Disable individual record button while main recording is active
-                audioPlayback.style.display = 'none'; // Hide playback during new recording
-                audioPlaybackPlaceholder.textContent = 'Recording...';
-                audioPlaybackPlaceholder.style.display = 'block';
-
-                console.log('Recording started...');
-            } else {
-                // Stop Recording
-                mediaRecorder.stop();
-                isRecording = false;
-                //startStopRecordingButton.textContent = 'Start Recording';
-                startStopRecordingButton.classList.remove('recording');
-                recordButton.disabled = false;
-                console.log('Recording stopped.');
-            }
-        });
-
-        // The "Record" button inside the voice module (can be used for separate short recordings if needed)
-        recordButton.addEventListener('click', async () => {
-            if (!isRecording) { // Only allow if main recording isn't active
-                const stream = await getMicrophone();
-                if (!stream) return;
-
-                mediaRecorder = new MediaRecorder(stream);
-                audioChunks = [];
-
-                mediaRecorder.ondataavailable = event => {
-                    audioChunks.push(event.data);
-                };
-
-                mediaRecorder.onstop = () => {
-                    audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
-                    const audioUrl = URL.createObjectURL(audioBlob);
-                    audioPlayback.src = audioUrl;
-                    audioPlayback.style.display = 'block';
-                    audioPlaybackPlaceholder.style.display = 'none';
-                    playButton.style.display = 'none';
-                    console.log('Short recording finished:', audioUrl);
-                };
-
-                mediaRecorder.start();
-                recordButton.textContent = 'Stop';
-                recordButton.style.backgroundColor = '#dc3545'; // Red for stop
-                audioPlayback.style.display = 'none';
-                audioPlaybackPlaceholder.textContent = 'Recording...';
-                audioPlaybackPlaceholder.style.display = 'block';
-            } else {
-                mediaRecorder.stop();
-                recordButton.textContent = 'Record';
-                recordButton.style.backgroundColor = '#007bff'; // Blue for record
-            }
-        });
-
-        // The play button is now largely redundant as the <audio> element provides controls.
-        // Keeping the ID for potential future use or if you want custom play logic.
-        // playButton.addEventListener('click', () => {
-        //     if (audioPlayback.src) {
-        //         audioPlayback.play();
-        //     }
-        // });
-
-
-        document.querySelector('.action-button-large.cross').addEventListener('click', () => {
-            console.log('Cross button clicked');
-            // Add logic for 'X' action
-        });
-
-        document.querySelector('.action-button-large.check').addEventListener('click', () => {
-            console.log('Check button clicked');
-            // Add logic for '✓' action
-        });
-    </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
